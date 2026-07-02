@@ -62,7 +62,7 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
         <a href="<?php echo $base; ?>/index.php" class="flex-shrink-0">
-          <img src="<?php echo $base; ?>/aksesniditigal.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
+          <img src="<?php echo $base; ?>/logo.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
         </a>
         
         <!-- Desktop Menu -->

@@ -2,7 +2,7 @@
 return [
   [
     'slug' => 'sistem-zakat-infaq',
-    'title' => 'Sistem Manajemen Zakat & Infaq',
+    'title' => 'Sistem Manajemen Zakat & Infaq - Lazipn.org',
     'category' => 'Fintech / Social',
     'short_desc' => 'Sistem pencatatan donasi real-time, dashboard analitik, dan integrasi payment gateway.',
     'description' => 'Platform digital untuk mengelolaTransaksi zakat, infaq, dan sedekah secara real-time. Sistem ini dirancang untuk lembaga amil zakat, yayasan, dan organisasi sosial yang membutuhkan transparansi dan akuntabilitas tinggi dalam pengelolaan dana donasi.',
@@ -16,9 +16,11 @@ return [
     ],
     'tech' => ['Laravel', 'MySQL', 'Stripe', 'WhatsApp API', 'Chart.js'],
     'gallery' => [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      '../ipn/index.png',
+      '../ipn/program.png',
+      '../ipn/detailprogram.png',
+      '../ipn/payment.png',
+
     ],
   ],
   [
@@ -35,11 +37,20 @@ return [
       'Sertifikat otomatis setelahCompletion kursus',
       'Forum diskusi per pertemuan',
     ],
-    'tech' => ['Laravel', 'Vue.js', 'MySQL', 'AWS S3', 'Video.js'],
+    'tech' => ['Laravel', 'Vue.js', 'MySQL', 'AWS S3','Tailwind CSS'],
     'gallery' => [
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80',
-      'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
-      'https://images.unsplash.com/photo-1523240794612-9ec25107770d?w=800&q=80',
+      '../geo/siswa.png',
+      '../geo/login.png',
+      '../geo/materisiswa.png',
+      '../geo/quis.png',
+      '../geo/riwayatquis.png',
+      '../geo/profilesiswa.png',
+      '../geo/guru.png',
+      '../geo/materi.png',
+      '../geo/essay.png',
+
+
+
     ],
   ],
   [
