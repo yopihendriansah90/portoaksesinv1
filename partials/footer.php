@@ -6,8 +6,8 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
           <!-- Brand + Micro CTA -->
           <div class="md:col-span-4">
-            <a href="index.php" class="inline-block mb-4">
-              <img src="Logo Stacked Vertical.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
+            <a href="<?php echo $base; ?>/index.php" class="inline-block mb-4">
+              <img src="<?php echo $base; ?>/Logo Stacked Vertical.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
             </a>
             <p class="text-sm text-gray-400 mb-4">
               Membangun sistem web yang solid, efisien, dan siap berkembang bersama pertumbuhan bisnis Anda.
@@ -21,9 +21,9 @@
           <div class="md:col-span-2">
             <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navigasi</h4>
             <ul class="space-y-3">
-              <li><a href="#layanan" class="text-sm text-gray-400 hover:text-white transition-colors">Layanan</a></li>
-              <li><a href="#portofolio" class="text-sm text-gray-400 hover:text-white transition-colors">Portofolio</a></li>
-              <li><a href="#kontak" class="text-sm text-gray-400 hover:text-white transition-colors">Kontak</a></li>
+              <li><a href="<?php echo $base; ?>/#layanan" class="text-sm text-gray-400 hover:text-white transition-colors">Layanan</a></li>
+              <li><a href="<?php echo $base; ?>/#portofolio" class="text-sm text-gray-400 hover:text-white transition-colors">Portofolio</a></li>
+              <li><a href="<?php echo $base; ?>/#kontak" class="text-sm text-gray-400 hover:text-white transition-colors">Kontak</a></li>
             </ul>
           </div>
 
@@ -31,8 +31,8 @@
           <div class="md:col-span-2">
             <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
             <ul class="space-y-3">
-              <li><a href="privacy-policy.php" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="terms-of-service.php" class="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="<?php echo $base; ?>/privacy-policy.php" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="<?php echo $base; ?>/terms-of-service.php" class="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
             </ul>
           </div>
 
@@ -78,8 +78,8 @@
             &copy; <?php echo date('Y'); ?> <?php echo $c['site_name']; ?>. All rights reserved.
           </p>
           <div class="flex items-center space-x-6">
-            <a href="privacy-policy.php" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
-            <a href="terms-of-service.php" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
+            <a href="<?php echo $base; ?>/privacy-policy.php" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+            <a href="<?php echo $base; ?>/terms-of-service.php" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

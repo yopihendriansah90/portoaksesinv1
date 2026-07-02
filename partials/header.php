@@ -61,16 +61,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
-        <a href="index.php" class="flex-shrink-0">
-          <img src="aksesniditigal.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
+        <a href="<?php echo $base; ?>/index.php" class="flex-shrink-0">
+          <img src="<?php echo $base; ?>/aksesniditigal.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
         </a>
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#layanan" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Layanan</a>
-          <a href="#portofolio" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Portofolio</a>
-          <a href="#kontak" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Kontak</a>
-          <a href="#kontak" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md">
+          <a href="<?php echo $base; ?>/#layanan" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Layanan</a>
+          <a href="<?php echo $base; ?>/#portofolio" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Portofolio</a>
+          <a href="<?php echo $base; ?>/#kontak" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Kontak</a>
+          <a href="<?php echo $base; ?>/#kontak" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md">
             Konsultasi Sistem
           </a>
         </div>
@@ -89,10 +89,10 @@
     <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100">
       <div class="px-4 py-6 space-y-4">
-        <a href="#layanan" class="block text-base font-medium text-gray-600 hover:text-brand-600">Layanan</a>
-        <a href="#portofolio" class="block text-base font-medium text-gray-600 hover:text-brand-600">Portofolio</a>
-        <a href="#kontak" class="block text-base font-medium text-gray-600 hover:text-brand-600">Kontak</a>
-        <a href="#kontak" class="block text-center w-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-lg">Konsultasi Sistem</a>
+        <a href="<?php echo $base; ?>/#layanan" class="block text-base font-medium text-gray-600 hover:text-brand-600">Layanan</a>
+        <a href="<?php echo $base; ?>/#portofolio" class="block text-base font-medium text-gray-600 hover:text-brand-600">Portofolio</a>
+        <a href="<?php echo $base; ?>/#kontak" class="block text-base font-medium text-gray-600 hover:text-brand-600">Kontak</a>
+        <a href="<?php echo $base; ?>/#kontak" class="block text-center w-full px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-lg">Konsultasi Sistem</a>
       </div>
     </div>
   </nav>

@@ -12,7 +12,7 @@ foreach ($projects as $p) {
   }
 }
 if (!$project) {
-  header('Location: index.php');
+  header('Location: ' . $base . '/index.php');
   exit;
 }
 ?>
@@ -21,9 +21,9 @@ if (!$project) {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Breadcrumb -->
     <nav class="flex items-center space-x-2 text-sm text-gray-500 mb-8">
-      <a href="index.php" class="hover:text-brand-600 transition-colors">Beranda</a>
+      <a href="<?php echo $base; ?>/index.php" class="hover:text-brand-600 transition-colors">Beranda</a>
       <span>/</span>
-      <a href="index.php#portofolio" class="hover:text-brand-600 transition-colors">Portofolio</a>
+      <a href="<?php echo $base; ?>/index.php#portofolio" class="hover:text-brand-600 transition-colors">Portofolio</a>
       <span>/</span>
       <span class="text-gray-900 font-medium"><?php echo htmlspecialchars($project['title']); ?></span>
     </nav>
@@ -82,7 +82,7 @@ if (!$project) {
           <a href="mailto:<?php echo $c['email']; ?>" class="block w-full text-center px-6 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg mb-3">
             Diskusikan Project Ini
           </a>
-          <a href="index.php#portofolio" class="block w-full text-center px-6 py-3 border-2 border-brand-600 text-brand-600 font-semibold rounded-xl hover:bg-brand-50 active:scale-95 transition-all duration-200">
+          <a href="<?php echo $base; ?>/index.php#portofolio" class="block w-full text-center px-6 py-3 border-2 border-brand-600 text-brand-600 font-semibold rounded-xl hover:bg-brand-50 active:scale-95 transition-all duration-200">
             Kembali ke Portofolio
           </a>
         </div>
