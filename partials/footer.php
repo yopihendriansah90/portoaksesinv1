@@ -106,15 +106,15 @@
 
     document.querySelectorAll('a[href*="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
-        e.preventDefault();
         const href = this.getAttribute("href");
         const hash = href.split('#')[1];
         if (!hash) return;
         const target = document.getElementById(hash) || document.querySelector('#' + hash);
         if (target) {
-          toggleMobileMenu(false);
+          e.preventDefault();
           target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
+        toggleMobileMenu(false);
       });
     });
 
