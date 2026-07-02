@@ -14,13 +14,11 @@
     @apply text-gray-900 antialiased;
     font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-600 ring-offset-2 rounded;
   }
 }
 
@@ -53,5 +51,26 @@
   }
   .nav-link.active {
     @apply text-brand-600 font-semibold;
+  }
+}
+
+#mobile-menu {
+  transition: opacity 0.25s ease-in-out, max-height 0.25s ease-in-out;
+  overflow: hidden;
+}
+#mobile-menu.hidden {
+  opacity: 0;
+  max-height: 0;
+}
+#mobile-menu:not(.hidden) {
+  opacity: 1;
+  max-height: 500px;
+}
+
+@media (max-width: 767px) {
+  .parallax-section {
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
   }
 }

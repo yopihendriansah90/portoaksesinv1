@@ -85,21 +85,31 @@
     </footer>
 
   <script>
-    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    
+
+    function toggleMobileMenu(expanded) {
+      mobileMenu.classList.toggle("hidden", !expanded);
+      mobileMenuBtn.setAttribute("aria-expanded", expanded);
+    }
+
     mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+      const isExpanded = !mobileMenu.classList.contains("hidden");
+      toggleMobileMenu(!isExpanded);
     });
 
-    // Smooth Scroll
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        toggleMobileMenu(false);
+      }
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute("href"));
         if (target) {
-          mobileMenu.classList.add("hidden");
+          toggleMobileMenu(false);
           target.scrollIntoView({
             behavior: "smooth",
             block: "start"
@@ -108,11 +118,11 @@
       });
     });
 
-    // Parallax Effect
     const parallaxSections = document.querySelectorAll('.parallax-section');
     let ticking = false;
 
     function updateParallax() {
+      if (window.innerWidth < 768) return;
       const scrollY = window.scrollY;
       parallaxSections.forEach(section => {
         const speed = parseFloat(section.dataset.parallaxSpeed) || 0.2;
@@ -123,7 +133,6 @@
       ticking = false;
     }
 
-    // Active Nav Link
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
