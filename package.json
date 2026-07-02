@@ -1,0 +1,30 @@
+{
+  "name": "aksesin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/css/tailwind-input.css -o ./public/css/style.css --minify",
+    "watch": "tailwindcss -i ./src/css/tailwind-input.css -o ./public/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yopihendriansah90/portoaksesinv1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yopihendriansah90/portoaksesinv1/issues"
+  },
+  "homepage": "https://github.com/yopihendriansah90/portoaksesinv1#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "@tailwindcss/forms": "^0.5.11",
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.16",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.3.2"
+  }
+}

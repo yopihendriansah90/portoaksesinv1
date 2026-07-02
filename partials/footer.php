@@ -1,4 +1,4 @@
-<?php $c = require __DIR__ . '/../config.php'; ?>
+<?php $c = require __DIR__ . '/../config.php'; $base = rtrim($c['base_path'], '/'); ?>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
@@ -7,14 +7,12 @@
           <!-- Brand + Micro CTA -->
           <div class="md:col-span-4">
             <a href="<?php echo $base; ?>/index.php" class="inline-block mb-4">
-              <img src="<?php echo $base; ?>/aksesniditigal.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
+              <img src="<?php echo $base; ?>/logodark.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
             </a>
             <p class="text-sm text-gray-400 mb-4">
               Membangun sistem web yang solid, efisien, dan siap berkembang bersama pertumbuhan bisnis Anda.
             </p>
-            <p class="text-sm text-gray-300">
-              Siap menskalakan bisnis IT Anda? <a href="mailto:<?php echo $c['email']; ?>" class="text-white font-semibold underline underline-offset-2 hover:text-brand-100 transition-colors">Konsultasi Gratis</a>
-            </p>
+
           </div>
 
           <!-- Quick Links -->
@@ -84,6 +82,7 @@
           </div>
         </div>
       </div>
+    </footer>
 
   <script>
     // Mobile Menu Toggle
@@ -94,7 +93,7 @@
       mobileMenu.classList.toggle("hidden");
     });
 
-    // Smooth scroll for anchor links
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -107,6 +106,57 @@
           });
         }
       });
+    });
+
+    // Parallax Effect
+    const parallaxSections = document.querySelectorAll('.parallax-section');
+    let ticking = false;
+
+    function updateParallax() {
+      const scrollY = window.scrollY;
+      parallaxSections.forEach(section => {
+        const speed = parseFloat(section.dataset.parallaxSpeed) || 0.2;
+        const rect = section.getBoundingClientRect();
+        const offset = (rect.top + scrollY - scrollY) * speed;
+        section.style.transform = `translateY(${offset * 0.1}px)`;
+      });
+      ticking = false;
+    }
+
+    // Active Nav Link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveNav() {
+      let currentSectionId = '';
+      const scrollPos = window.scrollY + 150;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href') || '';
+        if (href.includes(currentSectionId) && currentSectionId !== '') {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateParallax();
+          updateActiveNav();
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
   </script>
 

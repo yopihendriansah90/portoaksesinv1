@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #0056b3;
+  --color-brand-700: #004085;
+  --color-brand-900: #1e3a8a;
+}
+
+@layer base {
+  body {
+    @apply text-gray-900 antialiased;
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gradient-mesh {
+    background-color: #ffffff;
+    background-image: radial-gradient(at 40% 20%, rgba(0,86,179,0.08) 0px, transparent 50%),
+                      radial-gradient(at 80% 0%, rgba(0,86,179,0.05) 0px, transparent 50%),
+                      radial-gradient(at 0% 50%, rgba(0,86,179,0.05) 0px, transparent 50%);
+  }
+  .parallax-section {
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+  .nav-link {
+    @apply relative;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-0.5 bg-brand-600 transition-all duration-300 ease-out;
+    width: 0;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  .nav-link.active {
+    @apply text-brand-600 font-semibold;
+  }
+}

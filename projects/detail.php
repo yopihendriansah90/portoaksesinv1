@@ -42,9 +42,9 @@ if (!$project) {
       <h2 class="text-2xl font-bold text-gray-900 mb-6">Galeri Screenshot</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <?php foreach ($project['gallery'] as $img): ?>
-          <div class="aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
-            <img src="<?php echo htmlspecialchars($img); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-          </div>
+          <a href="<?php echo htmlspecialchars($img); ?>" target="_blank" rel="noopener noreferrer" class="group block aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <img src="<?php echo htmlspecialchars($img); ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </a>
         <?php endforeach; ?>
       </div>
     </div>
@@ -79,7 +79,7 @@ if (!$project) {
             <?php endforeach; ?>
           </div>
 
-          <a href="mailto:<?php echo $c['email']; ?>" class="block w-full text-center px-6 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg mb-3">
+          <a href="https://wa.me/<?php echo $c['whatsapp']; ?>?text=<?php echo urlencode('Halo Aksesin Digital, saya ingin diskusi tentang project: ' . $project['title']); ?>" class="block w-full text-center px-6 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg mb-3">
             Diskusikan Project Ini
           </a>
           <a href="<?php echo $base; ?>/index.php#portofolio" class="block w-full text-center px-6 py-3 border-2 border-brand-600 text-brand-600 font-semibold rounded-xl hover:bg-brand-50 active:scale-95 transition-all duration-200">

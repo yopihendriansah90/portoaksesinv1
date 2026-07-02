@@ -1,4 +1,4 @@
-<?php $c = require __DIR__ . '/../config.php'; ?>
+<?php $c = require __DIR__ . '/../config.php'; $base = rtrim($c['base_path'], '/'); ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,55 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $c['site_name']; ?> - Arsitektur Bisnis IT yang Solid</title>
   <meta name="description" content="Kami membantu perusahaan dan agensi membangun sistem web terintegrasi yang skalabel, efisien, dan aman.">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#0056b3',
-              700: '#004085',
-              900: '#1e3a8a',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style type="text/tailwindcss">
-    @layer base {
-      body {
-        @apply text-gray-900 antialiased;
-        font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6 {
-        @apply font-semibold tracking-tight;
-      }
-    }
-    @layer utilities {
-      .text-balance {
-        text-wrap: balance;
-      }
-      .gradient-mesh {
-        background-color: #ffffff;
-        background-image: radial-gradient(at 40% 20%, rgba(0,86,179,0.08) 0px, transparent 50%),
-                          radial-gradient(at 80% 0%, rgba(0,86,179,0.05) 0px, transparent 50%),
-                          radial-gradient(at 0% 50%, rgba(0,86,179,0.05) 0px, transparent 50%);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="<?php echo $base; ?>/public/css/style.css">
 </head>
 <body class="bg-white text-gray-900">
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/<?php echo $c['whatsapp']; ?>?text=Halo%20Aksesin%20Digital%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20project%2Farsitektur%20sistem%20IT."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-white shadow-2xl border-2 border-green-500 flex items-center justify-center hover:scale-110 hover:shadow-green-500/50 transition-all duration-300 group"
+     aria-label="Chat WhatsApp">
+    <img src="<?php echo $base; ?>/assets/wahstapp.webp" alt="WhatsApp" class="w-9 h-9 object-contain">
+    <span class="absolute inset-0 rounded-full border-2 border-green-500 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500 animate-ping"></span>
+  </a>
 
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
@@ -62,14 +29,14 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
         <a href="<?php echo $base; ?>/index.php" class="flex-shrink-0">
-          <img src="<?php echo $base; ?>/logo.png" alt="<?php echo $c['site_name']; ?>" class="h-12 w-auto">
+          <img src="<?php echo $base; ?>/logo.png" alt="<?php echo $c['site_name']; ?>" class="h-9 w-auto">
         </a>
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="<?php echo $base; ?>/#layanan" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Layanan</a>
-          <a href="<?php echo $base; ?>/#portofolio" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Portofolio</a>
-          <a href="<?php echo $base; ?>/#kontak" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Kontak</a>
+          <a href="<?php echo $base; ?>/#layanan" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Layanan</a>
+          <a href="<?php echo $base; ?>/#portofolio" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Portofolio</a>
+          <a href="<?php echo $base; ?>/#kontak" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors duration-200">Kontak</a>
           <a href="<?php echo $base; ?>/#kontak" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-lg hover:bg-brand-700 active:scale-95 transition-all duration-200 shadow-sm hover:shadow-md">
             Konsultasi Sistem
           </a>
